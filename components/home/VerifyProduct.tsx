@@ -48,7 +48,7 @@ const VerifyProduct = () => {
     setIsScanning(false);
     
     // Redirect after delay
-      if(decodedText.startsWith("http://localhost:3000/verify-product?verify=")){
+      if(decodedText.includes("/verify-product?verify=")){
         window.location.href = `/verify-product?verify=${decodedText.split("verify=")[1]}`
       } else {
         setError("QR code not supported")
