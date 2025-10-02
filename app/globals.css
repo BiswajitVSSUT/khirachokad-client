@@ -120,3 +120,55 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Additional responsive utilities */
+@media (max-width: 350px) {
+  .text-xs-responsive {
+    font-size: 0.625rem;
+  }
+  
+  .px-2-responsive {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .py-1-responsive {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+}
+
+/* Ensure text remains readable at high zoom levels */
+@media (min-resolution: 120dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Better mobile touch targets */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal scroll on very small screens */
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
