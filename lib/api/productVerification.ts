@@ -13,7 +13,10 @@ const api = axios.create({
 export interface VerificationResponse {
   success: boolean;
   message: string;
-  data?: any;
+  data?: {
+    success : boolean,
+    message : string
+  };
 }
 
 export interface VerificationResult {
@@ -30,7 +33,7 @@ export const productVerificationAPI = {
         isValid: true,
         message: response.data.message || 'Product verified successfully!',
       };
-    } catch (error: any) {
+    } catch (error) {
       // Handle different error scenarios
       if (axios.isAxiosError(error)) {
         if (error.response) {
