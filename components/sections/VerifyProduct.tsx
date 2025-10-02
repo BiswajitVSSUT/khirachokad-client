@@ -332,7 +332,7 @@ const VerifyProduct = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Always choose the right product. Scan QR code to validate the product 
-            authenticity and ensure you're getting genuine KHIRA CHOKADA feed.
+            authenticity and ensure you&apos;re getting genuine KHIRA CHOKADA feed.
           </p>
         </div>
 
