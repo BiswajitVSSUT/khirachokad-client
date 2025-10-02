@@ -36,19 +36,19 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <Link
-                href="#products"
+                href="/#products"
                 className="text-gray-700 hover:text-green-600 text-sm font-medium transition-colors duration-200"
               >
                 Our Products
               </Link>
               <Link
-                href="#footer"
+                href="/#footer"
                 className="text-gray-700 hover:text-green-600 text-sm font-medium transition-colors duration-200"
               >
                 Contact
               </Link>
               <Link
-                href="#verify"
+                href="/#verify"
                 className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors duration-200"
               >
                 Verify Products
@@ -91,21 +91,21 @@ const Navbar = () => {
         >
           <div className="flex flex-col h-full pt-4 px-6 space-y-4">
             <Link
-              href="#products"
+              href="/#products"
               className="text-gray-700 hover:text-green-600 px-3 py-3 rounded-md text-base font-medium border border-gray-400 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Our Products
             </Link>
             <Link
-              href="#footer"
+              href="/#footer"
               className="text-gray-700 hover:text-green-600 px-3 py-3 rounded-md text-base font-medium border border-gray-400 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Link
-              href="#verify"
+              href="/#verify"
               className="bg-green-600 text-white px-4 py-3 rounded-md text-base font-medium hover:bg-green-700 text-center transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >

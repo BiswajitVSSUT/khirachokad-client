@@ -48,9 +48,11 @@ const VerifyProduct = () => {
     setIsScanning(false);
     
     // Redirect after delay
-    setTimeout(() => {
-      window.location.href = `/verify-product?verify=${encodeURIComponent(decodedText)}`;
-    }, 1500);
+      if(decodedText.startsWith("http://localhost:3000/verify-product?verify=")){
+        window.location.href = `/verify-product?verify=${decodedText.split("verify=")[1]}`
+      } else {
+        setError("QR code not supported")
+      }
   };
 
   // Handle scan error
@@ -314,15 +316,6 @@ const VerifyProduct = () => {
     };
   }, []);
 
-  // Tips for better QR scanning
-  const scanningTips = [
-    'Ensure good lighting - avoid shadows and glare',
-    'Hold the QR code steady in the camera view',
-    'Position the QR code within the scanning box',
-    'Make sure the QR code is clear and not blurry',
-    'Avoid reflective surfaces that might cause glare'
-  ];
-
   return (
     <section id="verify" className="py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -377,18 +370,6 @@ const VerifyProduct = () => {
                       <X className="w-5 h-5" />
                       Stop Scanning
                     </button>
-                  </div>
-
-                  {/* Scanning tips overlay */}
-                  <div className="absolute top-4 left-4 right-4 z-10">
-                    <div className="bg-black bg-opacity-50 text-white p-3 rounded-lg">
-                      <p className="text-sm font-medium mb-1">Scanning Tips:</p>
-                      <ul className="text-xs space-y-1">
-                        {scanningTips.slice(0, 2).map((tip, index) => (
-                          <li key={index}>• {tip}</li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
                 </div>
               ) : (
@@ -468,21 +449,6 @@ const VerifyProduct = () => {
               )}
             </div>
 
-            {/* Scanning Tips */}
-            {!isScanning && (
-              <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                <h4 className="font-semibold text-blue-800 mb-2 text-sm">For better scanning:</h4>
-                <ul className="text-sm text-blue-700 space-y-1">
-                  {scanningTips.map((tip, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-blue-500 mt-0.5">•</span>
-                      {tip}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             {selectedImage && !isScanning && !isLoading && (
               <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-blue-200">
                 <div className="flex items-center justify-between mb-2">
@@ -512,18 +478,6 @@ const VerifyProduct = () => {
                   <div>
                     <p className="text-sm font-medium mb-1">Scanning Error</p>
                     <p className="text-sm">{error}</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {scanResult && (
-              <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-xl">
-                <div className="flex items-center text-green-800">
-                  <CheckCircle className="w-5 h-5 mr-2 flex-shrink-0" />
-                  <div>
-                    <p className="text-sm font-medium">Product Verified!</p>
-                    <p className="text-xs opacity-75 break-all">Code: {scanResult}</p>
                   </div>
                 </div>
               </div>
