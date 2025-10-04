@@ -26,9 +26,9 @@ const defaultProducts: Product[] = [
   },
   {
     id: '2',
-    name: 'Bansi Chokada',
+    name: 'Gai Chokada',
     description: 'Specially formulated for young cattle to ensure proper growth and development.',
-    image: '/bansi-chokada.png',
+    image: '/gai-chokada.png',
     features: ['Growth nutrients', 'Immune support', 'Balanced minerals']
   },
   {
@@ -92,9 +92,9 @@ const WhatWeOffer: React.FC<WhatWeOfferProps> = ({ products = defaultProducts })
                 </ul> */}
 
                 {/* Action Button */}
-                <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
+                {/* <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
                   Learn More
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

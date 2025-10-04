@@ -108,12 +108,12 @@ const Footer = () => {
               © 2025 KHIRA CHOKADA. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
+              {/* <a href="#" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
                 Privacy Policy
               </a>
               <a href="#" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
                 Terms of Service
-              </a>
+              </a> */}
               <a href="#footer" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
                 Contact Us
               </a>

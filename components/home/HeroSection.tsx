@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen md:min-h-[70vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen md:min-h-[70vh] lg:min-h-screen flex items-center justify-center overflow-hidden mt-10">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-green-100 bg-[url('/Bg.png')] bg-cover bg-center bg-no-repeat">
         {/* Overlay to ensure text readability */}
@@ -21,10 +21,19 @@ const HeroSection = () => {
       {/* Rest of your component remains the same */}
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center grid-flow-row-dense">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center grid-flow-row-dense">
           {/* Left Content */}
-          <div className="mt-10 md:mt-0 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+          <div className="text-center lg:text-left">
+            <div className='w-full flex justify-center lg:justify-start items-center lg:hidden'>
+              <Image
+                src="KC Logo.svg"
+                height={16}
+                width={16}
+                alt='Khira chokada logo'
+                className='h-32 w-32 object-fill'
+              />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
               Premium{' '}
               <span className="text-green-600">Cattle Feed</span>
             </h1>
@@ -60,7 +69,7 @@ const HeroSection = () => {
             </div>
 
             {/* Floating elements */}
-            <div className="absolute -top-4 -right-0 lg:-right-4 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-green-600 rounded-full flex items-center justify-center text-white font-extrabold text-3xl opacity-90">
+            <div className="absolute -top-0 -right-0 lg:-right-4 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-green-600 rounded-full flex items-center justify-center text-white font-extrabold text-3xl opacity-90">
               ✓
             </div>
             <div className="absolute -bottom-2 md:bottom-4 lg:-bottom-4 -left-4 md:left-16 lg:-left-4 w-30 h-30 rounded-full flex items-center justify-center text-white font-bold text-lg opacity-90">
