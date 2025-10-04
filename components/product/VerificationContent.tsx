@@ -51,7 +51,7 @@ export const VerificationContent: React.FC<VerificationContentProps> = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {isValid && (
                 <Link
-                  href="#products"
+                  href="/#products"
                   className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-600 hover:text-white transition-colors duration-200"
                 >
                   View Our Products
