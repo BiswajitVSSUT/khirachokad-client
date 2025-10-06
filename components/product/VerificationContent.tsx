@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, XCircle, ArrowLeft } from 'lucide-react';
+import { CheckCircle, XCircle, ArrowLeft, BadgeCheck, CircleCheck } from 'lucide-react';
 import Link from 'next/link';
 import { VerificationResult } from '@/lib/api/productVerification';
 
@@ -30,22 +30,22 @@ export const VerificationContent: React.FC<VerificationContentProps> = ({
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="text-center">
             {isValid ? (
-              <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
+              <CircleCheck className="w-20 h-20 bg-green-500 mx-auto mb-6 rounded-full text-white" />
             ) : (
-              <XCircle className="w-20 h-20 text-red-500 mx-auto mb-6" />
+              <XCircle className="w-20 h-20 bg-red-500 mx-auto mb-6 rounded-full text-white" />
             )}
 
             <h1 className={`text-3xl font-bold mb-4 ${
               isValid ? 'text-green-600' : 'text-red-600'
             }`}>
-              {isValid ? 'Product Verified' : 'Verification Failed'}
+              {isValid ? 'Original Product' : 'Duplicate Product'}
             </h1>
 
-            <p className={`text-lg mb-8 ${
+            {/* <p className={`text-lg mb-8 ${
               isValid ? 'text-green-700' : 'text-red-700'
             }`}>
               {message}
-            </p>
+            </p> */}
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

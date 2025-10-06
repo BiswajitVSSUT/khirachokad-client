@@ -21,21 +21,21 @@ const defaultProducts: Product[] = [
     id: '1',
     name: 'Khira Chokada',
     description: 'High-quality nutrition blend for optimal cattle health and milk production.',
-    image: '/khira-chokada.png',
+    image: '/khira-chokada.webp',
     features: ['Rich in protein', 'Natural ingredients', 'Enhanced digestibility']
   },
   {
     id: '2',
     name: 'Gai Chokada',
     description: 'Specially formulated for young cattle to ensure proper growth and development.',
-    image: '/gai-chokada.png',
+    image: '/gai-chokada.webp',
     features: ['Growth nutrients', 'Immune support', 'Balanced minerals']
   },
   {
     id: '3',
     name: 'Protein Chokada',
     description: 'Advanced nutrition for lactating cows to maximize milk quality and quantity.',
-    image: '/protein-chokada.png',
+    image: '/protein-chokada.webp',
     features: ['Milk production boost', 'Quality enhancement', 'Health maintenance']
   }
 ];
@@ -67,6 +67,7 @@ const WhatWeOffer: React.FC<WhatWeOfferProps> = ({ products = defaultProducts })
                 <Image
                   src={product.image}
                   alt={product.name}
+                  priority
                   fill
                   className="object-cover object-top"
                 />
